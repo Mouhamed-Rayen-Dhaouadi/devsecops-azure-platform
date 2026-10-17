@@ -16,4 +16,4 @@ def add_items(name:str):
     items.append(name)
     return {"added" : name}
 
-aws_key = "AKIAIOSFODNN7EXAMPLE1"
+aws_access_key_id = "AKIAJ7Q2XMZ4KWBP5NRD"
