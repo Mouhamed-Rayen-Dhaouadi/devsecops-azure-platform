@@ -23,7 +23,7 @@ jobs:
           sudo mv gitleaks /usr/local/bin/
 
       - name: Chercher des secrets
-        uses: gitleaks/gitleaks-action@0717577d45739eb3c851188b29f50ed6c0b2194e
+        uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   semgrep:
