@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
 
@@ -23,7 +23,7 @@ jobs:
           sudo mv gitleaks /usr/local/bin/
 
       - name: Chercher des secrets
-        uses: gitleaks/gitleaks-action@v2
+        uses: gitleaks/gitleaks-action@0717577d45739eb3c851188b29f50ed6c0b2194e
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   semgrep:
@@ -32,7 +32,7 @@ jobs:
       image: semgrep/semgrep
     steps:
       - name: Récupérer le code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
 
       - name: Analyser le code avec Semgrep
         run: semgrep scan --config p/python --config p/owasp-top-ten --error
