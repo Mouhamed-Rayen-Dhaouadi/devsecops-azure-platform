@@ -15,3 +15,5 @@ def list_items():
 def add_items(name:str):
     items.append(name)
     return {"added" : name}
+
+aws_key = "AKIAIOSFODNN7EXAMPLE1"
