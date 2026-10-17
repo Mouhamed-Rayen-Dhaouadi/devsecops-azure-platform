@@ -15,5 +15,3 @@ def list_items():
 def add_items(name:str):
     items.append(name)
     return {"added" : name}
-
-aws_access_key_id = "AKIAJ7Q2XMZ4KWBP5NRD"
