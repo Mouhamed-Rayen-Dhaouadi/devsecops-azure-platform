@@ -36,3 +36,19 @@ jobs:
 
       - name: Analyser le code avec Semgrep
         run: semgrep scan --config p/python --config p/owasp-top-ten --error
+  trivy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Construire l'image Docker
+        run: docker build -t mon-api:ci .
+
+      - name: Scanner l'image avec Trivy
+        uses: aquasecurity/trivy-action@1f0aa582c8c8f5f7639610d6d38baddfea4fdcee
+        with:
+          image-ref: mon-api:ci
+          severity: HIGH,CRITICAL
+          exit-code: '1'
+          ignore-unfixed: true
